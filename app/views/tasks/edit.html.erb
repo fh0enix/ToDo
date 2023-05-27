@@ -1,0 +1,8 @@
+<div>
+  <h1 class="font-bold text-2xl mb-3">Редагування завдання</h1>
+
+  <div id="<%= dom_id @task %>">
+    <%= render "form", task: @task %>
+    <%= link_to "Відміна", tasks_path, class: "btn mb-3 bg-gray-100" %>
+  </div>
+</div>
