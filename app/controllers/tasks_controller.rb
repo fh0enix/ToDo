@@ -5,6 +5,13 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def toggle
+    @task = Task.find(params[:id])
+    @task.update(completed: params[:completed])
+  
+    render json: { message: "Успіх!" }
+  end
+
   def create
     @task = Task.new(task_params)
 
