@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.update(completed: params[:completed])
   
-    render json: { message: "Успіх!" }
+    #render json: { message: "Успіх!" }
   end
 
   def create
@@ -19,7 +19,7 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to tasks_url, notice: "Завдання створено!" }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to tasks_url, notice: "Не може бути пустим!" }
       end
     end
   end
@@ -34,7 +34,7 @@ class TasksController < ApplicationController
       if @task.update(task_params)
         format.html { redirect_to tasks_url, notice: "Завдання успішно оновлено" }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_to tasks_url, notice: "Не може бути пустим!" }
       end
     end
   end
