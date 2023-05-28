@@ -11,9 +11,12 @@
 </div>
 
 <div id="tasks">
-  <h1 class="font-bold text-lg mb-7">Завдання</h1>
+  <h1 class="font-bold text-lg mb-7 grid place-items-center">Завдання</h1>
 
   <div class="px-5" data-controller="tasks">
     <%= render @tasks %>
   </div>
 </div>
+<br/>
+
+<p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block">@ <%= Time.now.year %></p>
